@@ -3,7 +3,6 @@ import { IDBPDatabase, openDB } from 'idb';
 import { IVSDocument, IVSSimilaritySearchItem } from './types/IVSDocument';
 import { IVSOptions } from './types/IVSOptions';
 import { IVSSimilaritySearchParams } from './types/IVSSimilaritySearchParams';
-import { Pipeline, env, pipeline } from '@xenova/transformers';
 import { constants } from './common/constants';
 import { filterDocuments, getObjectSizeInMB } from './common/helpers';
 
@@ -15,7 +14,7 @@ export class VectorStorage<T> {
   private readonly openaiModel?: string;
   private readonly openaiApiKey?: string;
   private readonly transfomersModel?: string;
-  private transformersPipeline?: Pipeline;
+  private transformersPipeline?: any;
   private readonly embedTextsFn: (texts: string[]) => Promise<number[][]>;
 
   constructor(options: IVSOptions = {}) {
@@ -105,7 +104,8 @@ export class VectorStorage<T> {
     });
   }
 
-  private async loadTransformersModel(): Promise<Pipeline> {
+  private async loadTransformersModel() {
+    const { env, pipeline } = await import('@xenova/transformers');
     env.allowLocalModels = false;
     return await pipeline('feature-extraction', this.transfomersModel);
   }

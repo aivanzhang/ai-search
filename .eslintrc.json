@@ -25,21 +25,14 @@
     "plugin:import/warnings",
     "plugin:import/typescript"
   ],
-  "plugins": [
-    "prettier",
-    "sort-keys-fix",
-    "sort-imports-es6-autofix"
-  ],
+  "plugins": ["prettier", "sort-keys-fix", "sort-imports-es6-autofix"],
   "rules": {
     "line-comment-position": "off",
     "import/no-unresolved": "off",
     "no-return-await": "off",
     "@typescript-eslint/restrict-template-expressions": "off",
     "no-continue": "off",
-    "max-params": [
-      "error",
-      4
-    ],
+    "max-params": ["error", 4],
     "no-underscore-dangle": "off",
     "init-declarations": "off",
     "sort-keys-fix/sort-keys-fix": "error",
@@ -47,11 +40,7 @@
     "no-console": [
       "error",
       {
-        "allow": [
-          "debug",
-          "warn",
-          "error"
-        ]
+        "allow": ["debug", "warn", "error"]
       }
     ],
     "no-undefined": "off",
@@ -64,26 +53,19 @@
     "@typescript-eslint/no-confusing-void-expression": "off",
     "@typescript-eslint/await-thenable": "off",
     "@typescript-eslint/no-misused-promises": "off",
+    "@typescript-eslint/explicit-function-return-type": "off",
     "sort-imports": "off",
     "no-magic-numbers": "off",
     "@typescript-eslint/no-non-null-assertion": "off",
     "no-ternary": "off",
-    "max-statements": [
-      "error",
-      50
-    ],
+    "max-statements": ["error", 50],
     "id-length": "off",
     "sort-imports-es6-autofix/sort-imports-es6": [
       2,
       {
         "ignoreCase": false,
         "ignoreMemberSort": false,
-        "memberSyntaxSortOrder": [
-          "none",
-          "all",
-          "multiple",
-          "single"
-        ]
+        "memberSyntaxSortOrder": ["none", "all", "multiple", "single"]
       }
     ],
     "@typescript-eslint/ban-ts-comment": "off",
